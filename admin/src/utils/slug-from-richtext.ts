@@ -1,4 +1,4 @@
-export const slugify = (text:string = "", wordJoiner: string = "-", wordMaxNb = 4, removeUpperCase?: boolean, removeAccents?: boolean, removeSpecialCharacters?: boolean) => {
+export const slugify = (text:string = "", wordJoiner: string = "-", wordMaxNb = 4, removeUpperCase?: boolean, removeAccents?: boolean, removeSpecialCharacters?: boolean, addEllipsis?: boolean) => {
   // Replace non-word characters with {wordJoiner} and convert to lowercase
   let slug = text;
   
@@ -24,14 +24,12 @@ export const slugify = (text:string = "", wordJoiner: string = "-", wordMaxNb = 
   if (removeSpecialCharacters)
     slug = slug.replace(/[,;._*$&'"`-]/g, ' ');
 
-  slug = slug
-  .replace(/[^a-z0-9À-ÿ ]+/g, '')
-  .replace(/\s+/g, ' ') || '';
+  slug = slug.replace(/\s+/g, ' ') || '';
   // Split the slug into words and keep only the first {wordMaxNb}
   let words = slug.split(' ');
   const len = words.length;
   words = words.slice(0, wordMaxNb);
   // Join the words back together with {wordJoiner} and return the result
   const res = words.join(wordJoiner);
-  return len > wordMaxNb ? `${res}...`: res;
+  return len > wordMaxNb && addEllipsis? `${res}...`: res;
 }
