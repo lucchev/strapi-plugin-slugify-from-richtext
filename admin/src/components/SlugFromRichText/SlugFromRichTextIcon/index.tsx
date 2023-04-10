@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Icon, Flex } from '@strapi/design-system';
-import { Uid } from '@strapi/icons';
+import { Paint } from '@strapi/icons';
 
 const IconBox = styled(Flex)`
   /* Hard code color values */
@@ -17,7 +17,7 @@ const IconBox = styled(Flex)`
 const SlugFromRichTextIcon = () => {
   return (
     <IconBox justifyContent="center" alignItems="center" width={7} height={6} hasRadius aria-hidden>
-      <Icon as={Uid} />
+      <Icon as={Paint} />
     </IconBox>
   );
 };

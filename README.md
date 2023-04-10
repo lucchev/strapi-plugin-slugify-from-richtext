@@ -2,7 +2,7 @@
 
 Adding a custom field of type string, which is populated from another field of type 'richText'
 
-## Enregistrement du plugin
+## Plugin registration
 ```javascript
 export default {
   // ...
@@ -14,9 +14,9 @@ export default {
 }
 ```
 
-## Utilisation du plugin
+## Using the plugin
 
-#### Exemple dans le content-type d'une collection :
+#### Example in the content-type of a collection :
 ``` json
   "myDescription": {
     "type": "richtext"
@@ -24,7 +24,7 @@ export default {
   "myGenerateTitle": {
     "type": "customField",
     "customField": "plugin::strapi-plugin-slugify-from-richtext.slug-from-richtext",
-    "relatedTo": "myText",
+    "relatedTo": "myDescription",
     "wordJoiner": "-",
     "wordMaxNb": 4
   }

@@ -35,9 +35,9 @@ const SlugFromRichText = (props:Props) => {
     attribute
   } = props;
 
-  const relatedFieldName = attribute.relatedTo || '';
-  const wordJoiner = attribute.wordJoiner;
-  const wordMaxNb = attribute.wordMaxNb;
+  const relatedFieldName = attribute.relatedTo || 'richTextContent';
+  const wordJoiner = attribute.wordJoiner || '-';
+  const wordMaxNb = attribute.wordMaxNb || 4;
 
   const cmEditView = useCMEditViewDataManager();
   const { modifiedData } = cmEditView;

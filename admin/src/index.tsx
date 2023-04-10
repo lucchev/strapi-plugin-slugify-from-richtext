@@ -4,32 +4,41 @@ import pluginPkg from '../../package.json';
 import pluginId from './pluginId';
 import getTrad from './utils/getTrad';
 import SlugFromRichTextIcon from './components/SlugFromRichText/SlugFromRichTextIcon';
+import Initializer from './components/Initializer';
 
 const name = pluginPkg.strapi.name;
 
+const customFieldToRegister = {
+  name: 'slug-from-richtext',
+  pluginId: 'strapi-plugin-slugify-from-richtext',
+  type: 'string',
+  icon: SlugFromRichTextIcon,
+  intlLabel: {
+    id: getTrad(`${pluginId}.field.slug-from-richtext.label`),
+    defaultMessage: 'Slug from richtext',
+  },
+  intlDescription: {
+    id: getTrad(`${pluginId}.field.slug-from-richtext.description`),
+    defaultMessage: 'This slug is generated automatically from the richtext field',
+  },
+  components: {
+    Input: async () => import(/* webpackChunkName: "slug-from-richtext-component" */ './components/SlugFromRichText'),
+  },
+  options: {
+  }
+};
+
+const plugin = {
+  id: pluginId,
+  initializer: Initializer,
+  isReady: false,
+  name,
+};
+
 export default {
   register(app: any) {
-    app.customFields.register({
-      name: 'slug-from-richtext',
-      pluginId: pluginId,
-      type: 'string',
-      icon: SlugFromRichTextIcon,
-      intlLabel: {
-        id: getTrad(`${pluginId}.fields.slug-from-richtext.label`),
-        defaultMessage: 'Slug from richtext',
-      },
-      intlDescription: {
-        id: getTrad(`${pluginId}.field.slug-from-richtext.description`),
-        defaultMessage: 'This slug is generated automatically from the richtext field',
-      },
-      components: {
-        Input: async () =>
-          import(/* webpackChunkName: "slug-from-richtext-component" */ './components/SlugFromRichText'),
-      },
-      options: {
-      },
-      visible: false
-    });
+    app.customFields.register(customFieldToRegister);
+    app.registerPlugin(plugin);
   },
 
   bootstrap(app: any) {},

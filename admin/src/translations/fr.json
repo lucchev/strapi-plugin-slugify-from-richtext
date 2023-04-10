@@ -1,3 +1,9 @@
 {
-  "plugin.name": "Slugify from richtext"
+  "plugin.name": "Slugify from richtext",
+  "field": {
+    "slug-from-richtext" : {
+      "label": "slug-from-richtext::label", 
+      "description": "slug-from-richtext::description"
+    }
+  }
 }
