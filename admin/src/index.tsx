@@ -6,19 +6,19 @@ import getTrad from './utils/getTrad';
 import SlugFromRichTextIcon from './components/SlugFromRichText/SlugFromRichTextIcon';
 import Initializer from './components/Initializer';
 
-const name = pluginPkg.strapi.name;
+const formatMessage = (message: any) => message;
 
 const customFieldToRegister = {
   name: 'slug-from-richtext',
-  pluginId: 'strapi-plugin-slugify-from-richtext',
+  pluginId: pluginId,
   type: 'string',
   icon: SlugFromRichTextIcon,
   intlLabel: {
-    id: getTrad(`${pluginId}.field.slug-from-richtext.label`),
-    defaultMessage: 'Slug from richtext',
-  },
+      id: getTrad("field.slug-from-richtext.label"),
+      defaultMessage: 'Slug from richtext',
+    },
   intlDescription: {
-    id: getTrad(`${pluginId}.field.slug-from-richtext.description`),
+    id: getTrad("field.slug-from-richtext.description"),
     defaultMessage: 'This slug is generated automatically from the richtext field',
   },
   components: {
@@ -32,7 +32,7 @@ const plugin = {
   id: pluginId,
   initializer: Initializer,
   isReady: false,
-  name,
+  name: pluginId,
 };
 
 export default {

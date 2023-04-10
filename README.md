@@ -1,4 +1,4 @@
-# Strapi plugin strapi-plugin-slugify-from-richtext
+# Strapi plugin slugify-from-richtext
 
 Adding a custom field of type string, which is populated from another field of type 'richText'
 
@@ -6,9 +6,9 @@ Adding a custom field of type string, which is populated from another field of t
 ```javascript
 export default {
   // ...
-  'strapi-plugin-slugify-from-richtext': {
+  'slugify-from-richtext': {
     enabled: true,
-    resolve: './src/plugins/strapi-plugin-slugify-from-richtext'
+    resolve: './src/plugins/slugify-from-richtext'
   },
   // ...
 }
@@ -23,7 +23,7 @@ export default {
   },
   "myGenerateTitle": {
     "type": "customField",
-    "customField": "plugin::strapi-plugin-slugify-from-richtext.slug-from-richtext",
+    "customField": "plugin::slugify-from-richtext.slug-from-richtext",
     "relatedTo": "myDescription",
     "wordJoiner": "-",
     "wordMaxNb": 4

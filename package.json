@@ -1,13 +1,13 @@
 {
   "name": "@lucchev/strapi-plugin-slugify-from-richtext",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Adding a custom field of type string, which is populated from another field of type 'richText'",
   "repository": {
     "type": "git",
     "url": "https://github.com/lucchev/strapi-plugin-slugify-from-richtext.git"
   },
   "strapi": {
-    "name": "strapi-plugin-slugify-from-richtext",
+    "name": "slugify-from-richtext",
     "displayName": "Slugify From RichText",
     "description": "Custom field of type string",
     "kind": "plugin"
