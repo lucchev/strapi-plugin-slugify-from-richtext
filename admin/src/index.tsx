@@ -9,20 +9,20 @@ import Initializer from './components/Initializer';
 const formatMessage = (message: any) => message;
 
 const customFieldToRegister = {
-  name: 'slug-from-richtext',
+  name: 'slug',
   pluginId: pluginId,
   type: 'string',
   icon: SlugFromRichTextIcon,
   intlLabel: {
-      id: getTrad("field.slug-from-richtext.label"),
+      id: getTrad("field.slug.label"),
       defaultMessage: 'Slug from richtext',
     },
   intlDescription: {
-    id: getTrad("field.slug-from-richtext.description"),
+    id: getTrad("field.slug.description"),
     defaultMessage: 'This slug is generated automatically from the richtext field',
   },
   components: {
-    Input: async () => import(/* webpackChunkName: "slug-from-richtext-component" */ './components/SlugFromRichText'),
+    Input: async () => import(/* webpackChunkName: "slug-component" */ './components/SlugFromRichText'),
   },
   options: {
   }

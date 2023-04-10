@@ -23,9 +23,23 @@ export default {
   },
   "myGenerateTitle": {
     "type": "customField",
-    "customField": "plugin::slugify-from-richtext.slug-from-richtext",
+    "customField": "plugin::slugify-from-richtext.slug",
     "relatedTo": "myDescription",
-    "wordJoiner": "-",
-    "wordMaxNb": 4
+    "wordJoiner": "_",
+    "wordMaxNb": 2,
+    "hidden": true,
+    "removeSpecialCharacters": false,
+    "removeUpperCase": false,
+    "removeAccents": false,
+    "addEllipsis": true
   }
 ```
+
+#### Facultative parameters (and their default value)
+- wordJoiner: "-"
+- wordMaxNb: 4
+- hidden: false
+- removeSpecialCharacters: false
+- removeUpperCase: false
+- removeAccents: false
+- addEllipsis: false
